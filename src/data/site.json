@@ -1,4 +1,9 @@
 {
 	"title": "Karthik Ganeshram",
-	"description": "Karthik Ganeshram's personal website where I share my thoughts! A chennai based computer architecture and parallel processing enthusiast who is also interested in web dev. I write about my thoughts and learnings in my blog."
+	"description": "Karthik Ganeshram's personal website where I share my thoughts! A chennai based computer architecture and parallel processing enthusiast who is also interested in web dev. I write about my thoughts and learnings in my blog.",
+	"pages": [
+		{"name" : "Home", "url" : "/"},
+		{"name" : "Blog", "url" : "/blog"},
+		{"name" : "About", "url" : "/about"}
+	]
 }

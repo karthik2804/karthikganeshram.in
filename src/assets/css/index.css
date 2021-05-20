@@ -1,0 +1,465 @@
+html{
+  --font-family-base: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --font-family-display: Noe Display, Georgia, Times, serif
+}
+/************************************************
+              Setting defaults start
+*************************************************/
+*{
+  box-sizing: border-box;
+}
+html,body{
+  width: 100%;
+  height: 100%;
+  line-height: 1.625rem;
+  margin:0%;
+  padding: 0%;
+  font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
+  font-family: var(--font-family-base) ;
+}
+p,h1,h2,h3,h4,h5,h6 {margin: 0;}
+a{
+  text-decoration: none;
+  position: relative;
+}
+/************************************************
+            Setting defaults stop
+*************************************************/
+
+/************************************************
+              Color Schemes start
+*************************************************/
+:root {
+  --color-bg: #ffffff;
+  --color-bg-offset: #f7f7f9;
+  --color-text: #373a3c;
+  --color-text-offset: #818a91;
+  --color-border: #eceeef;
+  --color-primary: #ff335f;
+  --color-primary-offset: #ff1447;
+  --color-secondary: #43a9a3;
+}
+[data-theme="dark"] {
+  --color-bg: #0e141b;
+  --color-bg-offset: #252526;
+  --color-text: #ffffff;
+  --color-text-offset: #818a91;
+  --color-border: #2d2d2d;
+  --color-primary: #ff5277;
+  --color-primary-offset: #ff2957;
+  --color-secondary: #43a9a3;
+}
+[data-theme='default'] {
+  --color-bg: #ffffff;
+  --color-bg-offset: #f7f7f9;
+  --color-text: #373a3c;
+  --color-text-offset: #818a91;
+  --color-border: #eceeef;
+  --color-primary: #ff335f;
+  --color-primary-offset: #ff1447;
+  --color-secondary: #43a9a3;
+}
+[data-theme='dark2'] {
+  --color-bg: #16161a;
+  --color-bg-offset: #29293e;
+  --color-text: #fffffe;
+  --color-text-offset: #94a1b2;
+  --color-border: #383a61;
+  --color-primary: #7f5af0;
+  --color-primary-offset: #e068fd;
+  --color-secondary: #2cb67d;
+}
+[data-theme='light2'] {
+  --color-bg: #fafbf5;
+  --color-bg-offset: #f2ede9;
+  --color-text: #41474C;
+  --color-text-offset: #757D84;
+  --color-border: #e8e0d9;
+  --color-primary: #99C221;
+  --color-primary-offset: #6E910A;
+  --color-secondary: #E55812;
+}
+/************************************************
+              Color Schemes end
+*************************************************/
+
+/************************************************
+            Flex box from spectre start
+*************************************************/
+.columns {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding: 0%;
+  margin: 0%;
+}
+[class~="col-"],
+.column {
+  -ms-flex: 1;
+  flex: 1;
+  width: 100%;
+  max-width: 100%;
+}
+[class~="col-"].col-12,
+[class~="col-"].col-11,
+[class~="col-"].col-10,
+[class~="col-"].col-9,
+[class~="col-"].col-8,
+[class~="col-"].col-7,
+[class~="col-"].col-6,
+[class~="col-"].col-5,
+[class~="col-"].col-4,
+[class~="col-"].col-3,
+[class~="col-"].col-2,
+[class~="col-"].col-1,
+.column.col-12,
+.column.col-11,
+.column.col-10,
+.column.col-9,
+.column.col-8,
+.column.col-7,
+.column.col-6,
+.column.col-5,
+.column.col-4,
+.column.col-3,
+.column.col-2,
+.column.col-1 {
+  -ms-flex: none;
+  flex: none;
+}
+.col-12 {
+  width: 100%;
+}
+.col-11 {
+  width: 91.66666667%;
+}
+.col-10 {
+  width: 83.33333333%;
+}
+.col-9 {
+  width: 75%;
+}
+.col-8 {
+  width: 66.66666667%;
+}
+.col-7 {
+  width: 58.33333333%;
+}
+.col-6 {
+  width: 50%;
+}
+.col-5 {
+  width: 41.66666667%;
+}
+.col-4 {
+  width: 33.33333333%;
+}
+.col-3 {
+  width: 25%;
+}
+.col-2 {
+  width: 16.66666667%;
+}
+.col-1 {
+  width: 8.33333333%;
+}
+@media (max-width: 840px) {
+  .col-md-12,
+  .col-md-11,
+  .col-md-10,
+  .col-md-9,
+  .col-md-8,
+  .col-md-7,
+  .col-md-6,
+  .col-md-5,
+  .col-md-4,
+  .col-md-3,
+  .col-md-2,
+  .col-md-1 {
+    -ms-flex: none;
+    flex: none;
+  }
+  .col-md-12 {
+    width: 100%;
+  }
+  .col-md-11 {
+    width: 91.66666667%;
+  }
+  .col-md-10 {
+    width: 83.33333333%;
+  }
+  .col-md-9 {
+    width: 75%;
+  }
+  .col-md-8 {
+    width: 66.66666667%;
+  }
+  .col-md-7 {
+    width: 58.33333333%;
+  }
+  .col-md-6 {
+    width: 50%;
+  }
+  .col-md-5 {
+    width: 41.66666667%;
+  }
+  .col-md-4 {
+    width: 33.33333333%;
+  }
+  .col-md-3 {
+    width: 25%;
+  }
+  .col-md-2 {
+    width: 16.66666667%;
+  }
+  .col-md-1 {
+    width: 8.33333333%;
+  }
+  .hide-md {
+    display: none !important;
+  }
+  .show-md {
+    display: block !important;
+  }
+}
+@media (max-width: 600px) {
+  .col-sm-12,
+  .col-sm-11,
+  .col-sm-10,
+  .col-sm-9,
+  .col-sm-8,
+  .col-sm-7,
+  .col-sm-6,
+  .col-sm-5,
+  .col-sm-4,
+  .col-sm-3,
+  .col-sm-2,
+  .col-sm-1 {
+    -ms-flex: none;
+    flex: none;
+  }
+  .col-sm-12 {
+    width: 100%;
+  }
+  .col-sm-11 {
+    width: 91.66666667%;
+  }
+  .col-sm-10 {
+    width: 83.33333333%;
+  }
+  .col-sm-9 {
+    width: 75%;
+  }
+  .col-sm-8 {
+    width: 66.66666667%;
+  }
+  .col-sm-7 {
+    width: 58.33333333%;
+  }
+  .col-sm-6 {
+    width: 50%;
+  }
+  .col-sm-5 {
+    width: 41.66666667%;
+  }
+  .col-sm-4 {
+    width: 33.33333333%;
+  }
+  .col-sm-3 {
+    width: 25%;
+  }
+  .col-sm-2 {
+    width: 16.66666667%;
+  }
+  .col-sm-1 {
+    width: 8.33333333%;
+  }
+  .hide-sm {
+    display: none !important;
+  }
+  .show-sm {
+    display: block !important;
+  }
+}
+/************************************************
+            Flex box from spectre end
+*************************************************/
+
+/************************************************
+              Css Utilities start
+*************************************************/
+.w-100{ width: 100%; }
+.h-100{ height: 100%; }
+.h1 { height: 1rem; }
+.h2 { height: 2rem; }
+.h3 { height: 4rem; }
+.h4 { height: 8rem; }
+.h5 { height: 16rem; }
+.flex{ display: flex; }
+.flex-colum{ flex-direction: column; }
+.flex-grow-1{ flex-grow: 1; }
+.items-center{ align-items: center; }
+.justify-center{ justify-content: center; }
+.justify-end{ justify-content: flex-end;}
+.pa1{ padding: 1rem; }
+.pa2{ padding: 2rem; }
+.absolute{ position: absolute; }
+.relative{ position: relative; }
+.fixed{ position: fixed; }
+.hide{ display: none; }
+.img-responsive{ width: 100;height: auto; }
+/************************************************
+              Css Utilities end
+*************************************************/
+
+/************************************************
+          Some default Styles start
+*************************************************/
+a::before {
+  content: "";
+  display: block;
+  height: 3px;
+  width: 0%;
+  background-color: var(--color-text-offset);
+  position: absolute;
+  transition: all ease-in-out 250ms;
+  bottom: 0px;
+}
+a:hover::before {
+  width: 100%;
+}
+/************************************************
+          Some default Styles end
+*************************************************/
+
+/************************************************
+              nav bar start
+*************************************************/
+.nav {
+  margin-top: 1rem;
+  height: 6rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav-item {
+  margin: 0 .7vw;
+  color: var(--color-text);
+  text-transform: uppercase;
+}
+.nav-item.active::before{
+  width: 100%;
+  background-color: var(--color-primary);
+}
+.logo {
+  padding: 1vh 1vw;
+  flex-grow: 1;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+.logo a::before{
+  display: none;
+}
+.logo svg {
+  padding: 1rem;
+  fill: var(--color-text);
+  stroke: var(--color-text);
+  cursor: pointer;
+}
+.logo svg:hover {
+  fill: var(--color-primary);
+  stroke: var(--color-primary);
+}
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background: var(--color-text);
+  margin: 3px;
+  transition: all 0.3s ease;
+  position: absolute;
+  left: 0;
+}
+
+.hamburger {
+  display: none;
+  padding: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+.line1 {
+  top: 6px
+}
+.line2 {
+  top: 12px
+}
+.line3 {
+  top: 18px;
+}
+
+
+/*Stying for small screens*/
+
+@media screen and (max-width: 800px) {
+  nav {
+      z-index: 3;
+  }
+  .hamburger {
+      display: block;
+      z-index: 2;
+      transition: all 0.7s ease;
+  }
+  .nav-links {
+      position: fixed;
+      top: 0;
+      left: 0;
+      background: var(--color-bg-offset);
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      clip-path: circle(50px at 100% -20%);
+      -webkit-clip-path: circle(50px at 90% -10%);
+      transition: all 0.75s ease-out;
+      pointer-events: none;
+      z-index: 2;
+  }
+  .nav-links a {
+    margin: 1rem;
+}
+  .nav-links.open {
+      clip-path: circle(1000px at 90%);
+      -webkit-clip-path: circle(1000px at 90%);
+      pointer-events: all;
+  }
+}
+.toggle .line1, .toggle .line3 {
+  width: 0%;
+}
+
+.toggle .line2-left{
+  transform: rotate(-45deg);
+}
+.toggle  .line2-right{
+  transform: rotate(45deg);
+}
+.hamburger.toggle {
+  transform-origin: center center;
+  transform: rotate(-90deg);
+}
+
+/************************************************
+                nav bar end
+*************************************************/
+
+/************************************************
+              Animation Start
+*************************************************/
+
+/************************************************
+              Animation end 
+*************************************************/

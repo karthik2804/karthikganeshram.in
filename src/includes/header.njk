@@ -1,0 +1,25 @@
+<div class="columns w-100 justify-center">
+    <div class="column col-11 col-sm-12">
+        <div class="nav">
+            <div class="logo h-100">
+                <a class="h-100" href="/">{% include "icons/siteLogo.njk" %}</a>
+            </div>
+            <div class="flex-grow-1 flex  justify-end nav-links">
+                {% for item in site.pages %}
+                    <a class="nav-item {%if pageName==item.name %}active{% endif %}" href="{{item.url}}">{{item.name}}</a>
+                {% endfor %}
+            </div>
+            <span class="d-flex" style="align-items:center;font-size:1.25rem;padding-right:1rem;cursor:pointer;" id="ThemeSwitch" onclick="toggleThemeSelection()">
+              <span style="display:flex;justify-content:center;align-items:center;border-radius:50%;width:3rem;height:3rem;background:var(--color-bg-offset)">
+                {% include "icons/paintbrush.html" %}
+              </span>
+            </span>
+            <div class="hamburger">
+                <div class="line1"></div>
+                <div class="line2 line2-left"></div>
+                <div class="line2 line2-right"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </div>
+</div>

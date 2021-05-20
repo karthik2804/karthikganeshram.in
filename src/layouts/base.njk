@@ -18,7 +18,12 @@
   </head>
 
   <body>
-    <scipt src="/assets/js/index.js">
-    </scipt>
+    <div class="h-100 columns justify-center">
+      <div class="col-12 h-100">
+        {% include 'header.njk' %}
+        {{content | safe}}
+      </div>
+    </div>
+    <script src="/assets/js/index.js"></script>
   </body>
 </html>
