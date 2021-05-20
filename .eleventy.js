@@ -14,7 +14,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.setLibrary("md", markdownLib)
 
-    eleventyConfig.addPassthroughCopy({ "src/assets/*": "/assets" })
+    eleventyConfig.addPassthroughCopy({ "src/assets": "/assets" })
     eleventyConfig.setTemplateFormats([
         "md",
     ]);
