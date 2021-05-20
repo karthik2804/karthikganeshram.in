@@ -9,7 +9,7 @@
                     <a class="nav-item {%if pageName==item.name %}active{% endif %}" href="{{item.url}}">{{item.name}}</a>
                 {% endfor %}
             </div>
-            <span class="d-flex" style="align-items:center;font-size:1.25rem;padding-right:1rem;cursor:pointer;" id="ThemeSwitch" onclick="toggleThemeSelection()">
+            <span class="d-flex nav-item" style="align-items:center;font-size:1.25rem;padding-right:1rem;cursor:pointer;" id="ThemeSwitch" onclick="toggleThemeSelection()">
               <span style="display:flex;justify-content:center;align-items:center;border-radius:50%;width:3rem;height:3rem;background:var(--color-bg-offset)">
                 {% include "icons/paintbrush.html" %}
               </span>

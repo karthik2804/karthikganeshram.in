@@ -1,0 +1,19 @@
+<div id="themepicker" class="themepicker" data-nosnippet="">
+    <h3 class="title tc">Select Theme</h3>
+    <div style="cursor:pointer;position:absolute;right: 0px;top:0px;padding:1rem;font-size:1.125rem;font-weight:500;" onclick="toggleThemeSelection()">X</div>
+    <div class="list flex" id="theme-menu">
+        {% for theme in themes.collection %}
+        <div class="item pa1" id="{{theme.tag}}" onclick='switchTheme("{{theme.tag}}")'>
+          <button class="themepicker__btn" data-theme="{{theme.tag}}" aria-label="select color theme '{{theme.name}}'">
+            <span class="name">{{theme.name}}</span>
+            <span class="themepicker__palette">
+              <span class="themepicker__hue themepicker__hue--primary"></span>
+              <span class="themepicker__hue themepicker__hue--secondary"></span>
+              <span class="themepicker__hue themepicker__hue--border"></span>
+              <span class="themepicker__hue themepicker__hue--textoffset"></span> 
+              <span class="themepicker__hue themepicker__hue--text"></span></span>
+          </button>
+        </div>
+        {% endfor %}
+        </div>
+</div>

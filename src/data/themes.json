@@ -1,0 +1,8 @@
+{
+  "collection": [
+		{"name": "Classic", "tag":"default"},
+		{"name": "Dark", "tag":"dark"},
+		{"name": "Alternate Light", "tag":"light2"},
+		{"name": "Alternate Dark", "tag":"dark2"}
+  ]
+}
