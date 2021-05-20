@@ -15,9 +15,10 @@ html,body{
   margin:0%;
   padding: 0%;
   font-size: calc(16px + (18 - 16) * ((100vw - 300px) / (1600 - 300)));
+  text-rendering: optimizeLegibility;
   font-family: var(--font-family-base) ;
+  color: var(--color-text);
 }
-p,h1,h2,h3,h4,h5,h6 {margin: 0;}
 a{
   text-decoration: none;
   position: relative;
@@ -310,6 +311,7 @@ a{
 .pa2{ padding: 2rem; }
 .mt1{ margin-top: 1rem;}
 .mt2{ margin-top: 2rem;}
+.mt4{ margin-top: 8rem;}
 .mb1{ margin-bottom: 1rem;}
 .mb2{ margin-bottom: 2rem;}
 .absolute{ position: absolute; }
@@ -328,6 +330,7 @@ a::before {
   content: "";
   display: block;
   height: 3px;
+  left:0;
   width: 0%;
   background-color: var(--color-secondary);
   position: absolute;
@@ -395,6 +398,8 @@ a:hover::before {
 .hamburger {
   display: none;
   padding: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   flex-direction: column;
   justify-content: center;
   position: relative;
@@ -464,7 +469,9 @@ a:hover::before {
 /************************************************
                 nav bar end
 *************************************************/
-
+/************************************************
+                footer start
+*************************************************/
 .divider {
   border-top: 0.05rem solid var(--color-border);
   height: .05rem;
@@ -483,6 +490,41 @@ a:hover::before {
 .copyright{
   color: var(--color-text-offset);
 }
+/************************************************
+                footer end
+*************************************************/
+h1,h2,h3,h4,h5,h6 {
+  font-family: var(--font-family-display);
+}
+/************************************************
+              Homepage Start
+*************************************************/
+.homeContent h3{margin: 0.33rem;}
+.homeContent strong{font-size: 1.1875rem;text-transform: uppercase;font-weight: 700;}
+.homeContent a {color: var(--color-secondary);}
+.homeContent a::before{background-color: var(--color-primary);}
+.homeContent p{
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-top: 0;
+}
+
+.homeContent h1{
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+  margin-top: 0.5rem;
+  font-family: var(--font-family-display);
+}
+.homeContent h1 a{color: var(--color-primary);}
+.homeContent h1 a::before{background-color: var(--color-secondary);}
+
+@media (min-width: 800px) {
+  .homeContent p{font-size: 1.75rem;}
+  .homeContent h1{font-size: 3.75rem;line-height: 3.75rem;}
+}
+/************************************************
+              Homepage end
+*************************************************/
 /************************************************
               Animation Start
 *************************************************/

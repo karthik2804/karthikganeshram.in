@@ -3,3 +3,13 @@ layout: "base.njk"
 pageName: "Home"
 permalink: "/"
 ---
+<div class="columns w-100 justify-center pa1">
+  <div class="column col-10 col-sm-12">
+    <div class="w-100 homeContent">
+      {{content | safe}}
+    </div>
+    <div class="w-100 mt4">
+      <h2> Latest Posts</h2>
+    </div>
+  </div>
+</div>
