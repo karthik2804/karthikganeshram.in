@@ -297,13 +297,21 @@ a{
 .h4 { height: 8rem; }
 .h5 { height: 16rem; }
 .flex{ display: flex; }
-.flex-colum{ flex-direction: column; }
+.flex-column{ flex-direction: column; }
 .flex-grow-1{ flex-grow: 1; }
+.flex-shrink{ flex-shrink: 0; }
+.flex-basis{ flex-basis: auto;}
 .items-center{ align-items: center; }
 .justify-center{ justify-content: center; }
 .justify-end{ justify-content: flex-end;}
+.justify-between{ justify-content: space-around;}
+.tc {text-align: center;}
 .pa1{ padding: 1rem; }
 .pa2{ padding: 2rem; }
+.mt1{ margin-top: 1rem;}
+.mt2{ margin-top: 2rem;}
+.mb1{ margin-bottom: 1rem;}
+.mb2{ margin-bottom: 2rem;}
 .absolute{ position: absolute; }
 .relative{ position: relative; }
 .fixed{ position: fixed; }
@@ -321,7 +329,7 @@ a::before {
   display: block;
   height: 3px;
   width: 0%;
-  background-color: var(--color-text-offset);
+  background-color: var(--color-secondary);
   position: absolute;
   transition: all ease-in-out 250ms;
   bottom: 0px;
@@ -348,6 +356,7 @@ a:hover::before {
   color: var(--color-text);
   text-transform: uppercase;
 }
+.nav-item::before{background-color: var(--color-text-offset);}
 .nav-item.active::before{
   width: 100%;
   background-color: var(--color-primary);
@@ -456,6 +465,24 @@ a:hover::before {
                 nav bar end
 *************************************************/
 
+.divider {
+  border-top: 0.05rem solid var(--color-border);
+  height: .05rem;
+  margin: .4rem 0;
+}
+.social{
+  padding: 1rem;
+  color: var(--color-text);
+}
+.social:hover {
+  color: var(--color-primary)
+}
+.social::before {
+  display: none;
+}
+.copyright{
+  color: var(--color-text-offset);
+}
 /************************************************
               Animation Start
 *************************************************/
