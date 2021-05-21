@@ -1,0 +1,45 @@
+<ul class="pagination" style="justify-content:center;flex-shrink:0;">
+	{%- if currentPageNumber == 0 -%}
+	<li class="page-item disabled">
+			<span>Previous</span>
+	{%- else -%}
+	<li class="page-item">
+			<a href="{{ previousURL }}">Previous</a>
+	{%- endif -%}
+	</li>
+	{%- for pageUrl in range(0,numberOfPages) %}
+			{%- set isCurrentPage = currentPageNumber == loop.index0 -%}
+			{%- if isCurrentPage %}
+					<li class="page-item active">
+			{%- else -%}    
+					<li class="page-item">
+			{%- endif %}
+
+			{%- if isCurrentPage 
+			or loop.first 
+			or loop.last
+			or currentPageNumber in [loop.index0-1, loop.index0+1] -%}
+
+					{%- if loop.last and currentPageNumber < (loop.length - 3) -%}
+									<span class="test">...</span>
+					{%- endif -%}
+					
+							<a href="{{ pageUrl }}">{{ loop.index }}</a>
+
+					{%- if loop.first and currentPageNumber > 2 -%}
+									<span class="trial">...</span>
+					{%- endif -%}
+
+			{%- endif -%}
+
+			</li>
+	{%- endfor %}
+	{%- if currentPageNumber == pagination.hrefs.length -1 -%}
+		<li class="page-item disabled">
+			<span>Next</span>
+	{%- else -%}
+		<li class="page-item">
+			<a href="{{ nextURL }}">Next</a>
+	{%- endif -%}
+	</li>
+</ul>

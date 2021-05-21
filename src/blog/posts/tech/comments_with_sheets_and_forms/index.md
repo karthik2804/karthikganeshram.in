@@ -1,7 +1,7 @@
 ---
 title: Adding Comments to Eleventy Website with Google Sheets and Forms
 description: In this post we implement comments in eleventy blog using google forms/sheets
-mainImage: [/assets/images/commentsMain.png, Comments section using google forms/sheets]
+mainImage: [/images/commentsMain.png, Comments section using google forms/sheets]
 imageCaption: A comments section implemented with google sheets/forms
 date: 2021-05-10
 tags: 
@@ -17,7 +17,7 @@ To start things off, let us set up google forms with the required fields. The fi
 
 Open up the form in preview mode (use the eye icon) and then open developer console. Now we will note down the unique name attribute for each of the fields. To do this, in the elements tab of the developer console search for “entry.”. This will show us 4 entries. They are the name attributes that we must use in our form while submitting from our blog post, so note them down. The order is the same order of our fields. We also need to note down the url for the action attribute of the form. 
 
-!["Google forms with required field"](/assets/images/forms.png)*Google forms with required field*
+!["Google forms with required field"](/images/forms.png)*Google forms with required field*
 
 Now that the google form is set up, it is time to link it to a google sheet.Go into the responses tab of the form and attach it to a spreadsheet. Open up the spreadsheet and add an extra field called isAuthor. This field is never filled up by the form, we will use an ArrayFunction to fill it up as the data arrives. The sheet should be publicly viewable but not editable. Set the permissions in link sharing and save the url as it will be required later.
 
@@ -27,7 +27,7 @@ Now let us add a couple of formulas and formatting. First, let us set “Timesta
 =ArrayFormula(ISNUMBER(SEARCH("<insert email address>", $E$2:E)))
 ```
 
-!["Google sheets with formula"](/assets/images/sheets.png)*Google sheets with formula*
+!["Google sheets with formula"](/images/sheets.png)*Google sheets with formula*
 
 Let us set up firebase authentication using google as an auth provider. Create a new project in the firebase console and add a web app. Once the app is added, copy the setup code it provides. In the authentication section enable the required auth provider in the authentication tab under sign-in method tab.
 
@@ -214,10 +214,10 @@ The important part of implementing the UI is done in the “comments.njk” file
 The iframe tag is added to avoid the page refresh when the form is submitted. Once we add javascript in the next step, the comments component will function as follows.
 
 If the user is logged in, then the comment form will be visible along with the user profile and an option to sign out
-!["Comments section with user logged in"](/assets/images/empty_loggedin.png)*Comments section with user logged in*
+!["Comments section with user logged in"](/images/empty_loggedin.png)*Comments section with user logged in*
 
 If the user is not logged in, then the form is hidden away and the user has the option to sign in with google to login.
-!["Comments section with user logged out"](/assets/images/empty_loggedout.png)*Comments section with user logged out*
+!["Comments section with user logged out"](/images/empty_loggedout.png)*Comments section with user logged out*
 
 We are almost at the end. The final ingredient is the javascript logic. The _loadComments()_ makes a request to the sheet document with that particular page url and gets the comments that belong to it. The _displayComments()_ parses the csv that is returned and displays it by creating new elements for each comment. The checkForm() is used to verify if the user is signed in before submitting the comment. Once a new comment is submitted, the comments are reloaded and only new one are rendered. 
 

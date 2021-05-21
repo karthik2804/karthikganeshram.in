@@ -458,7 +458,7 @@ a:hover::before {
   }
 }
 .toggle .line1, .toggle .line3 {
-  width: 0%;
+  opacity: 0;
 }
 
 .toggle .line2-left{
@@ -469,9 +469,8 @@ a:hover::before {
 }
 .hamburger.toggle {
   transform-origin: center center;
-  transform: rotate(-90deg);
+  transform: rotate(-360deg);
 }
-
 /************************************************
                 nav bar end
 *************************************************/
@@ -564,6 +563,15 @@ h1,h2,h3,h4,h5,h6 {
 }
 .chip:hover {color: var(--color-primary-offset);}
 .chip::before{display: none;}
+
+.pagination {list-style: none; display: flex; width: 100%;justify-content: center;padding: 0;}
+.pagination li{display: inline-block;color: var(--color-secondary);margin: .2rem .05rem}
+.pagination li.disabled span{padding: 0.5rem;opacity: 0.75;pointer-events: none;}
+.pagination li a{padding: 0.5rem;}
+.pagination li a::before{display: none;}
+.pagination li.active{background-color: var(--color-secondary);}
+.pagination li.active a{color: var(--color-text);}
+.pagination li a:hover{color: var(--color-primary);cursor: pointer;}
 /************************************************
               Blogpage end
 *************************************************/
@@ -625,26 +633,9 @@ h1,h2,h3,h4,h5,h6 {
   background-color: var(--color-bg);
   color: var(--color-text);
 }
-
-.themepicker__hue--primary {
-  background-color: var(--color-primary)
-}
-
-.themepicker__hue--secondary {
-  background-color: var(--color-secondary)
-}
-
-.themepicker__hue--border {
-  background-color: var(--color-border)
-}
-
-.themepicker__hue--textoffset {
-  background-color: var(--color-text-offset)
-}
-
-.themepicker__hue--text {
-  background-color: var(--color-text)
-}
-.themepicker__hue+.themepicker__hue {
-  margin-left: -.3125em
-}
+.themepicker__hue--primary {background-color: var(--color-primary)}
+.themepicker__hue--secondary {background-color: var(--color-secondary)}
+.themepicker__hue--border {background-color: var(--color-border)}
+.themepicker__hue--textoffset {background-color: var(--color-text-offset)}
+.themepicker__hue--text {background-color: var(--color-text)}
+.themepicker__hue+.themepicker__hue {margin-left: -.3125em}

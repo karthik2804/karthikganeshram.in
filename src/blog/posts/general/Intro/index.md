@@ -1,7 +1,7 @@
 ---
 title: A peek into my life and a Brief Introduction
 description: In this post, I introduce myself and explain the purpose of this blog
-mainImage: [/assets/images/author.jpg, Author infront of Golden Gate Bridge]
+mainImage: [/images/author.jpg, Author infront of Golden Gate Bridge]
 imageCaption: Karthik Ganeshram
 date: 2021-05-07
 tags: 

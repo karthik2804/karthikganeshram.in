@@ -36,7 +36,6 @@ module.exports = collection => {
         group.forEach((pageObject, index, source) => {
             pageObject.first = 0;
             pageObject.last = indices[source[0].tagName] - 1
-            console.log("pagenumber is", source[0].pageNumber)
 
             pageObject.previous = ((source[0].pageNumber > 0) ? index : undefined)
             pageObject.next = ((source[0].pageNumber < (indices[source[0].tagName] -1)) ? source[0].pageNumber + 1 : undefined)

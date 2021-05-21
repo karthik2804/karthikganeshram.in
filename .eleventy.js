@@ -1,4 +1,7 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
+const util = require('util')
+
+
 
 module.exports = function(eleventyConfig) {
     const pagedTagsCollection = require('./src/includes/collections/pagedTags');
@@ -15,6 +18,11 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPlugin(syntaxHighlight);
     eleventyConfig.setLibrary("md", markdownLib)
 
+    eleventyConfig.addFilter('dump', obj => {
+        return util.inspect(obj)
+      });
+    
+    eleventyConfig.setDataDeepMerge(true);
     eleventyConfig.addPassthroughCopy({ "src/assets": "/assets" })
     eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" })
     eleventyConfig.addPassthroughCopy({ "src/blog/**/*.jpg": "/assets/images" })
@@ -71,7 +79,6 @@ function extractExcerpt(article) {
     const content = article.templateContent;
     excerpt = content.split("\n",1)[0].slice(0, 150);
     if(excerpt.length == 150) {excerpt = excerpt + "..."}
-    console.log(excerpt)
     
     return excerpt;
 }

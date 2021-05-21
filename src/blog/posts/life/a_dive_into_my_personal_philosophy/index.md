@@ -1,7 +1,7 @@
 ---
 title: A dive into my personal philosophy
 description: In this post, I introduce my journey towards the discovery of my personal philosophy and my views
-mainImage: [/assets/images/philosophy.jpg, "Image of library with busts of Philosophers"]
+mainImage: [/images/philosophy.jpg, "Image of library with busts of Philosophers"]
 imageCaption: Photo by  <a href="https://unsplash.com/@giamboscaro?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Giammarco</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 layout: blogPost.njk
 date: 2021-05-14

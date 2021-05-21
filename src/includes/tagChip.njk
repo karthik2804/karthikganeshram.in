@@ -5,7 +5,7 @@
             {%- if tag != "pagedTags"-%}
             {%- if tag != "pagedTagsListing"-%}
             {%- if tag != "all"-%}
-                <a class="chip" href="/blog/tags/{{ tag }}/0">{{ tag }}</a>
+                <a class="chip" href="/blog/tags/{{ tag | slug }}/0">{{ tag }}</a>
             {%- else -%}
                 <a class="chip" href="/blog/">All</a>
             {%- endif -%}
