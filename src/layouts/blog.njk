@@ -1,4 +1,33 @@
 ---
 layout: "base.njk"
 pageName: "Blog"
+description: A chennai based computer architecture and parallel processing enthusiast who is also interested in web dev. I write about my thoughts and learnings in my blog.
+pagination:
+    data: collections.post
+    reverse: true
+    size: 5
 ---
+
+<div class="columns w-100 justify-center pa1">
+  <div class="column col-10 col-sm-12">
+    <div class="w-100 blogContent tc">
+      {{content | safe}}
+    </div>
+    <div class="columns flex-columns" style="justify-content:center">
+        <div class="column col-9 col-md-12 post-content" style="padding:0;">
+        <div class="container w-100">
+            <div class="columns" style="padding:0.5rem;justify-content:space-between">
+                <div class="column col-8 col-md-12">
+                    {%- for post in pagination.items -%}
+                        {% include "postList.njk" %}
+                    {%- endfor -%}
+                </div>
+                <div class="column col-3 col-md-12">
+                    {% include "tagChip.njk" %}
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+  </div>
+</div>

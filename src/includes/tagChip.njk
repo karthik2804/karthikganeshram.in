@@ -1,0 +1,16 @@
+<div style="padding:1rem">
+    <h4>Tags:</h4>
+    {%- for tag in collections | returnKeys %}
+        {%- if tag != "post"-%}
+            {%- if tag != "pagedTags"-%}
+            {%- if tag != "pagedTagsListing"-%}
+            {%- if tag != "all"-%}
+                <a class="chip" href="/blog/tags/{{ tag }}/0">{{ tag }}</a>
+            {%- else -%}
+                <a class="chip" href="/blog/">All</a>
+            {%- endif -%}
+        {%- endif -%}
+        {%- endif -%}
+        {%- endif -%}
+    {%- endfor -%}
+</div>
