@@ -1,0 +1,36 @@
+<h2 class="post-subtitle">Comments</h3>
+<div id="commentSection" class="comments">
+	<div id="no-comments" class="post-info no-comments">
+		<p>There are currently no comments on this article, be the first to add one below!</p>
+	</div>
+</div>
+<h3 class="post-subtitle">Add a Comment</h3>
+<div id="auth" style="display:none;">
+	<div class="post-info">
+        You must authenticate with google in order to post comments.
+    </div>
+	<button class="google-button" onclick="authenticate()">
+		<div class="d-flex justify-center items-center">
+			{% include 'icons/google.njk' %} Authenticate with Google
+    </div>
+	</button>
+</div>
+<div class="comments" id="comments-form">
+	<div id="user" class="user">
+		<img class="image" id="image">
+		<span class="name" id="name"></span>
+		<button class="button" id="button" onclick="signOut()">Sign Out</button>
+	</div>
+	<form onsubmit="return checkform()" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdeT6VPXKvg5NLo2socJFISOGxkENzV3b1vYacoK8xr-ns7Lg/formResponse" target="comments_hidden_iframe" id="comment-form" autocomplete="off">
+		<input name="{{site.comments.postFields[0]}}" type="text" value="{{page.url}}" style="display:none">
+		<input name="{{site.comments.postFields[3]}}" type="text" id="email" style="display:none">
+		<input name="{{site.comments.postFields[1]}}" type="text" id="userName" style="display:none">
+		<div class="group" style="flex-grow:1;">
+			<textarea id="comment-content" maxlength=140 name="{{site.comments.postFields[2]}}" form="comment-form" required=""></textarea>
+			<span class="bar"></span>
+			<label>Type in your comment</label>
+		</div>
+		<input id="comment-submit" class="submitButton" type="submit" value="Post">
+	</form>
+</div>
+<iframe name="comments_hidden_iframe" id="comments_hidden_iframe" style="display:none;"></iframe>

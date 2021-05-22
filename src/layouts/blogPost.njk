@@ -1,0 +1,46 @@
+---
+layout: base.njk
+pageName: Blog
+permalink: /blog/posts/{{title | slug}}/
+includedScripts: [https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js, https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js, comments]
+---
+{% set suggestedPosts = collections[tags | getSimilarContent] %}
+{% set currentPostTitle = title %}
+{% set suggestedPosts = suggestedPosts | filterByTitle(currentPostTitle) %}
+{% set suggestedPosts = suggestedPosts.slice(0, 3) %}
+{% set suggestedPostScrollHorizontal = true %}
+
+<div class="columns col-gapleess flex-columns justify-center">
+	<div class="column col-6 col-md-12 pa1">
+		<h1 class="post-title">{{title}}</h1>
+		<span>
+			{%- for tag in tags -%}
+				{%- if tag != "post" -%}
+					<a class="chip" href="/blog/tags/{{ tag | slug}}/0">{{ tag }}</a>
+				{%- endif -%}
+			{%- endfor -%}
+		</span>
+		<div>{{page.date | formatPostDate}}</div>
+	</div>
+	<div class="column col-12">
+		<img class="img-responsive" src="{{mainImage}}" alt="{{mainImageAlt}}">
+		<em>{{imageCaption | safe}}</em>
+	</div>
+	<div class="column col-3 hide-md pa1 post-content"></div>
+	<div class="column col-6 col-md-12 pa1 post-content">
+		{{ content | safe }}
+	</div>
+	<div class="column col-3 hide-md pa1 post-content"></div>
+	<div class="column col-9 pa1 col-md-12 justify-center">
+		{% if suggestedPosts.length > 0 %}
+			<h3>Similar Content</h3>
+			{% include 'suggestedPosts.njk' %}
+			<div class="w-100 flex justify-end">
+				{% include "allPosts.njk" %}
+			</div>
+		{% endif %}
+	</div>
+	<div class="column col-7 col-md-12 pa2">
+		{% include 'comments.njk' %}
+	</div>
+</div>

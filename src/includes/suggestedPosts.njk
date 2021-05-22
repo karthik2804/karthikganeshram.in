@@ -1,0 +1,21 @@
+<div class="suggested-postsList {% if suggestedPostScrollHorizontal %} grid-horizontal-scroll {% endif %}">
+	{% for post in suggestedPosts %}
+		<a class="suggested-item" href="{{post.url}}">
+			<img src="{{post.data.mainImage}}"  loading="lazy">
+			<div class="content flex flex-column w-100 h-100">
+				<h2 class="pa1">{{post.data.title | trimTitle }}</h2>
+				<div class="description flex-grow-1">{{post.data.content | trimContent | safe }}</div>
+				<div class="date">
+					{{post.date | formatPostDate }}
+					<span aria-hidden="true">⋅</span>
+					{%-  for tag in post.data.tags -%}
+						{%- if tag != "post" -%}
+							<span>
+								{{ tag }}</span>
+						{%- endif -%}
+					{%- endfor -%}
+				</div>
+			</div>
+		</a>
+	{% endfor %}
+</div>

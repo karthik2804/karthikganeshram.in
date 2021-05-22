@@ -24,7 +24,7 @@
 									<span class="test">...</span>
 					{%- endif -%}
 					
-							<a href="{{ pageUrl }}">{{ loop.index }}</a>
+							<a href="{{ hrefs[loop.index - 1] }}">{{ loop.index }}</a>
 
 					{%- if loop.first and currentPageNumber > 2 -%}
 									<span class="trial">...</span>
@@ -34,7 +34,7 @@
 
 			</li>
 	{%- endfor %}
-	{%- if currentPageNumber == pagination.hrefs.length -1 -%}
+	{%- if currentPageNumber == hrefs.length -1 -%}
 		<li class="page-item disabled">
 			<span>Next</span>
 	{%- else -%}

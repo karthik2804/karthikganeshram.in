@@ -1,33 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>{% if title %}{{title}} | {% else %}{% if pageName != "Home" %}{{pageName}} | {% endif %}{% endif %}{{ author.name }}</title>
-      <meta name="description" content="Karthik Ganeshram's personal website where I share my thoughts! {{description}}">
-      <meta property="og:title" content="{% if metatitle %} {{metatitle}} {% else %}{{title}}{% endif %}"/>
-      <meta property="og:url" content="karthikganeshram.in{{page.url }}" />
-      <meta property="og:description" content="{{description}}" />
-      <meta name="twitter:card" content="summary_large_image"></meta>
-      <meta property="og:image" content=""  />
-      <meta property="og:site_name" content="{{author.name}}">
-      <meta name="twitter:image:alt" content="">
-      <meta name="author" content="{{author.name}}">
-      <link rel="stylesheet" href="/assets/css/index.css">
-      <link rel="shortcut icon" href="/assets/images/logo.png" type="image/png">
-  </head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>
+			{% if title %}{{title}} | {% else %}
+				{% if pageName != "Home" %}{{pageName}} | {% endif %}
+			{% endif %}{{ author.name }}</title>
+		<meta name="description" content="Karthik Ganeshram's personal website where I share my thoughts! {{description}}">
+		<meta property="og:title" content="{% if metatitle %} {{metatitle}} {% else %}{{title}}{% endif %}"/>
+		<meta property="og:url" content="karthikganeshram.in{{page.url }}"/>
+		<meta property="og:description" content="{{description}}"/>
+		<meta name="twitter:card" content="summary_large_image"></meta>
+		<meta property="og:image" content="https://karthikganeshram.in{% if mainImage %}{{mainImage[0]}}{% else %}/images/author.jpg{% endif %}" />
+		<meta property="og:site_name" content="{{author.name}}">
+		<meta name="twitter:image:alt" content="{% if mainImage %}{{mainImageAlt}} {% else %} Author Image {% endif %}">
+		<meta name="author" content="{{author.name}}">
+		<link rel="stylesheet" href="/assets/css/index.css">
+		<link rel="shortcut icon" href="/assets/images/logo.png" type="image/png">
+	</head>
 
-  <body>
-    {% include 'themer.njk' %}
-    <div class="h-100 columns justify-center">
-      <div class="col-12 h-100 flex flex-column">
-        {% include 'header.njk' %}
-        <div class="flex-grow-1">
-          {{content | safe}}
-        </div>
-        {% include 'footer.njk' %}
-      </div>
-    </div>
-    <script src="/assets/js/index.js"></script>
-  </body>
+	<body>
+		{% include 'themer.njk' %}
+		<div class="h-100 columns justify-center">
+			<div class="col-12 h-100 flex flex-column">
+				{% include 'header.njk' %}
+				<div class="flex-grow-1">
+					{{content | safe}}
+				</div>
+				{% include 'footer.njk' %}
+			</div>
+		</div>
+		<script src="/assets/js/index.js"></script>
+		{% for item in includedScripts %}
+			{% if item.slice(0,5) == "https"%}
+				<script src="{{item}}"></script>
+			{% else %}
+				<script src="/assets/js/{{item}}.js"></script>
+			{% endif %}
+		{% endfor %}
+	</body>
 </html>

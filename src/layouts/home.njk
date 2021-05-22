@@ -2,14 +2,21 @@
 layout: "base.njk"
 pageName: "Home"
 permalink: "/"
+metatitle: Home | Karthik Ganeshram
+description: A chennai based computer architecture and parallel processing enthusiast who is also interested in web dev. I write about my thoughts and learnings in my blog.
 ---
+{% set suggestedPosts = collections["post"].slice(0,6).reverse()%}
+
 <div class="columns w-100 justify-center pa1">
-  <div class="column col-10 col-sm-12">
-    <div class="w-100 homeContent">
-      {{content | safe}}
-    </div>
-    <div class="w-100 mt4">
-      <h2> Latest Posts</h2>
-    </div>
-  </div>
+	<div class="column col-10 col-sm-12">
+		<div class="w-100 homeContent">
+			{{content | safe}}
+		</div>
+		<div class="w-100 mt4">
+			{% include 'suggestedPosts.njk' %}
+		</div>
+		<div class="w-100 flex justify-end">
+			{% include "allPosts.njk" %}
+		</div>
+	</div>
 </div>

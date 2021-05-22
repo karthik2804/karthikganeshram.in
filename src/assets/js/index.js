@@ -7,6 +7,10 @@ hamburger.addEventListener('click', ()=>{
     hamburger.classList.toggle("toggle");
 });
 
+
+/********************
+*Theme picker start
+*********************/
 const themepicker = document.getElementById("themepicker")
 const ThemeSwitch = document.getElementById("themeSwitch")
 let themes = ["default", "dark", "dark2", "light2"]
@@ -39,3 +43,7 @@ function switchTheme(tag) {
 function toggleThemeSelection() {
         themepicker.classList.toggle("is-open")
 }
+/********************
+*Theme picker end
+*********************/
+

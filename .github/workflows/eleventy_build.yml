@@ -7,7 +7,7 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Build
-        uses: TartanLlama/actions-eleventy@v1.1
+        uses: mfyz/actions-eleventy@master
         with:
           install_dependencies: true
       - name: Deploy

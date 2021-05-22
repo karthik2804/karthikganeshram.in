@@ -5,5 +5,10 @@
 		{"name" : "Home", "url" : "/"},
 		{"name" : "Blog", "url" : "/blog"},
 		{"name" : "About", "url" : "/about"}
-	]
+	],
+	"comments": {
+		"postUrl" : "https://docs.google.com/forms/u/0/d/e/1FAIpQLSdeT6VPXKvg5NLo2socJFISOGxkENzV3b1vYacoK8xr-ns7Lg",
+		"readUrl" : "https://docs.google.com/spreadsheets/d/1icmUfD7bj2SUaTwB7tVbjyoOexN90cZd5vwuqXwJUFU",
+		"postFields" : ["entry.1738070516","entry.1593505758","entry.1851568030", "entry.1638622064"]
+	}
 }

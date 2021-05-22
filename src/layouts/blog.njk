@@ -2,6 +2,7 @@
 layout: "base.njk"
 pageName: "Blog"
 description: A chennai based computer architecture and parallel processing enthusiast who is also interested in web dev. I write about my thoughts and learnings in my blog.
+metatitle: Blog | Karthik Ganeshram
 ---
 {% if containsPagination%}
 	{% set paginationData = tag.pageData %}
@@ -11,13 +12,21 @@ description: A chennai based computer architecture and parallel processing enthu
 	{% set numberOfPages = tag.last + 1 %}
 	{% set numberOfPosts = collections[tag.tagName].length %}
 	{% set content = '<h2> ' + numberOfPosts + ' posts tagged \"' + tag.tagName + '\"</h2>' %}
+	{% set partUrl = "/blog/tags/" + tag.tagName.toLowerCase() +"/" %}
+	{% set hrefs = [] %}
+	{% for i in range(0,numberOfPages) %}
+		{% set hrefs = (hrefs.push(partUrl + i), hrefs)%}
+	{% endfor %}
 {% else %}
   {% set paginationData = pagination.items %}
   {% set previousURL = pagination.href.previous %}
   {% set nextURL = pagination.href.next %}
   {% set currentPageNumber = pagination.pageNumber %}
   {% set numberOfPages = pagination.hrefs.length %}
+	{% set hrefs = pagination.hrefs %}
 {% endif %}
+
+{{href}}
 
 <div class="columns w-100 justify-center pa1">
   <div class="column col-10 col-sm-12">

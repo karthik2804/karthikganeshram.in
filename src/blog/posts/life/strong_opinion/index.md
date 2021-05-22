@@ -1,9 +1,10 @@
 ---
+layout: blogPost.njk
 title: Why strong opinions matter
 description: In this post, I explore my view of why I think strong opinions are vital in the quest to find your truth.
-mainImage: [/images/thinker.jpg, "Image of the thinker statue"]
+mainImage: /assets/images/thinker.jpg
+mainImageAlt: Image of the thinker statue
 imageCaption: Photo by <a href="https://unsplash.com/@neonbrand?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">NeONBRAND</a> on <a href="https://unsplash.com/s/photos/thinker-statue?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-layout: blogPost.njk
 date: 2021-05-17
 tags: 
     - post
