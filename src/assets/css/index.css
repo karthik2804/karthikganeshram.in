@@ -728,7 +728,7 @@ img+em a {
 	line-height: 1.625rem;
 }
 
-.post-content img {
+.post-content img, .post-content video {
 	width: 100%;
 	height: auto;
 	padding: 1rem;

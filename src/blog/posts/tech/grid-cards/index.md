@@ -10,11 +10,11 @@ tags:
     - post
     - Tech
 ---
-I have always avoided of CSS grids and always prefered using flexboxes in places where grids would have been the better choice. I finally decided to overcome the fear and finally explore it. In this short post, We will implement a content card using CSS grid which can be used for displaying list of latest posts or suggest similar posts in eleventy blog. It should be staight forward to convert it to the other Static site generators. 
+I have always avoided CSS grids and preferred using flexboxes in places where grids would have been the better choice. I finally decided to overcome the fear and finally explore it. In this short post, we will implement a content card using CSS grid which can be used for displaying a list of latest posts or suggest similar posts in an eleventy blog. It should be straightforward to convert it to the other Static site generators.  
 
 We will create a component in nunjucks that takes an input array of eleventy posts and creates a card listing. The component will also optionally take a value that decides if the component places the card in a single row with horizontal scrolling support or allows the listing to span multiple lines.
 
-We first creat the nunjucks template for the suggestion cards.
+We first create the nunjucks template for the suggestion cards.
 
 ###### suggestedPosts.njk
 
@@ -44,7 +44,7 @@ We first creat the nunjucks template for the suggestion cards.
 {% endraw %}
 ```
 
-The "suggested-postsList" div is the container for the the list of cards. The configurable option that will scroll the grid horizontally instead of shifting the cards to a new row can be set by setting the value of the _suggestedPostScrollHorizontal_ to true using the nunjucks set directive in the parent layout.
+The "suggested-postsList" div is the container for the list of cards. The configurable option that will scroll the grid horizontally instead of shifting the cards to a new row can be set by setting the value of the _suggestedPostScrollHorizontal_ to true using the nunjucks set directive in the parent layout.
 
 ```js
 {% raw %}{% set suggestedPostScrollHorizontal = true %}{% endraw %}
@@ -56,7 +56,7 @@ The _SuggestedPosts_ is an array of eleventy posts set in the parent layout and 
 {% raw %}{% set suggestedPosts = collections["post"].slice(0,6).reverse() %}{% endraw %}
 ```
 
-Now that we are done with the nunjucks template, let us add the CSS for the component to complete it. The CSS is pretty straightforward. It utilizes a simple CSS grid with an image covering the entire span of each component. It is necessary to add an overlay over the image to make the text on the card readable. We apply it using gradient. The smaller text sizes need a darker gradient and hence we add a second background gradient on those elements. To add for some interactivity the post content is visible only on hover. 
+Now that we are done with the nunjucks template, let us add the CSS for the component to complete it. The CSS is pretty straightforward. It utilizes a simple CSS grid with an image covering the entire span of each component. It is necessary to add an overlay over the image to make the text on the card readable. We apply it using gradients. The smaller text sizes need a darker gradient and hence we add a second background gradient on those elements. To add for some interactivity the post content is visible only on hover. 
 
 ###### index.css
 
@@ -131,7 +131,7 @@ Now that we are done with the nunjucks template, let us add the CSS for the comp
 }
 ```
 
-Now that we have the entire component ready, it can be used to display latest posts or whatever one can imagine in the form of cards. A couple of examples of the components with and without horizontal scrolling can be seen below.
+Now that we have the entire component ready, it can be used to display the latest posts or whatever one can imagine in the form of cards. A couple of examples of the components with and without horizontal scrolling can be seen below.
 
 <video controls autoplay>
   <source src="/assets/images/card-scroll.webm" type="video/webm">
