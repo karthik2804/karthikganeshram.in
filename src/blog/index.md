@@ -3,7 +3,7 @@ layout: blog.njk
 pagination:
     data: collections.post
     reverse: true
-    size: 2
+    size: 5
 ---
 
 ## Welcome to my Blog!
