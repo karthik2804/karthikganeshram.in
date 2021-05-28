@@ -40,27 +40,13 @@ I prefer rock music as a genre the most but enjoy most kinds of music.
 </form>
 
 ### Books
-#### Suggested Reads
-- "The Subtle art of not giving a f*ck" by Mark Mason
-- "The monk who sold his ferrari" by Robin Sharma
-#### Currently reading
-- "Everything is f*cked" by Mark Mason
-- "A man's search for meaning" by Viktor E. Frankl
+I enjoy reading books to expand my knowledge and to gain different views. I especially enjoy reading about philosophy and self improvement books. I also enjoy reading biographies.
 
+For the entire list of books that I have read and want to read, checkout my [reading list](/reading-list)
 
-<form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSdvmlONHQfio8hRsNBBzXN_Y4vNvwghzMxmD7KEgDfhx9nqGg/formResponse" target="book_hidden_iframe">
-    <div class="d-flex w-100">
-        <div class="group" style="flex-grow:1;">
-            <input class="textbox" id="book-name" name="entry.262159436" type="text" autocomplete="off" required />
-            <span class="highlight"></span>
-            <span class="bar"></span>
-            <label id="book-label">Suggest a Book</label>
-        </div>
-        <div class="group">
-        <input class="submitButton" type="submit" value="Submit">
-        </div>
-    </div>
-</form>
+### Collaborations
+
+I am open to collaborations. Please contact me via [email](mailto:raams.karthik@gmail.com)
 
 <iframe name="music_hidden_iframe" id="music_hidden_iframe" style="display:none;"></iframe>
 <iframe name="book_hidden_iframe" id="book_hidden_iframe" style="display:none;"></iframe>

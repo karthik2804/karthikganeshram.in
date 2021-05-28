@@ -9,18 +9,20 @@ description: A chennai based computer architecture and parallel processing enthu
 		<div class="tc mb2">
 			<h2>Hello There!</h2>
 		</div>
-		<div class="columns  justify-center items-center">
-			<div class="column col-6 col-md-12">
-				<img width="2442px" height="1374px" alt="Author photo" class="img-responsive" src="/assets/images/author.jpg">
-			</div>
-			<div class="column col-6 col-md-12">
-				<div class="pa2 about-header">
-					{% for line in author.about %}
-						<p>{{line}}</p>
-					{% endfor %}
+		<div class="columns flex-column justify-center items-center">
+			<div class="columns justify-center items-center">
+				<div class="column col-6 col-md-12">
+					<img width="2442px" height="1374px" alt="Author photo" class="img-responsive" src="/assets/images/author.jpg">
+				</div>
+				<div class="column col-6 col-md-12">
+					<div class="pa2 about-header">
+						{% for line in author.about %}
+							<p>{{line}}</p>
+						{% endfor %}
+					</div>
 				</div>
 			</div>
-			<div class="column col-7 col-md-11 about-content mb2 pa1 about-content">
+			<div class="column col-6 col-md-11 about-content mb2 pa1 about-content">
 				{{content | safe }}
 			</div>
 		</div>

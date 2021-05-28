@@ -1,8 +1,6 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const util = require('util')
 
-
-
 module.exports = function (eleventyConfig) {
 	const pagedTagsCollection = require('./src/includes/collections/pagedTags');
 	let markdownIt = require("markdown-it")
@@ -16,6 +14,15 @@ module.exports = function (eleventyConfig) {
 
 	let markdownLib = markdownIt(options).use(markdownItAttrs, {})
 	eleventyConfig.addPlugin(syntaxHighlight);
+	
+	// when rendering table, wrap in div container
+	markdownLib.renderer.rules.table_open = function(tokens, idx, options, env, self) {
+		return `<div class='table-wrapper'>` + self.renderToken(tokens, idx, options);
+	};
+	markdownLib.renderer.rules.table_close = function(tokens, idx, options, env, self) {
+		return self.renderToken(tokens, idx, options) + `</div>`
+	}
+	
 	eleventyConfig.setLibrary("md", markdownLib)
 
 	eleventyConfig.addFilter('dump', obj => {
