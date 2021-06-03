@@ -1,0 +1,5 @@
+---
+permalink: /api/latestPost.json
+---
+{% set latestPost = collections["post"].reverse()[0] %}
+{"Date": 1623083600005,"title": "{{latestPost.data.title}}","url":"{{latestPost.url}}", "image":"{{latestPost.data.mainImage}}"}

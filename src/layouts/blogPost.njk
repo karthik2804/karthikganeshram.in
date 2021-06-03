@@ -2,7 +2,7 @@
 layout: base.njk
 pageName: Blog
 permalink: /blog/posts/{{title | slug}}/
-includedScripts: [https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js, https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js, comments]
+includedScripts: [https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js, https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js, https://www.gstatic.com/firebasejs/8.6.2/firebase-messaging.js, firebase, comments, notify]
 ---
 {% set suggestedPosts = collections[tags | getSimilarContent] %}
 {% set currentPostTitle = title %}

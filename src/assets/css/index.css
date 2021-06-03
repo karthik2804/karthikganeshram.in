@@ -685,7 +685,7 @@ h2 {font-size: 2.25rem}
               Blogpage Start
 *************************************************/
 .pageTitle {
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 }
 .postList-title a{
   color: var(--color-primary);
@@ -1052,6 +1052,11 @@ textarea:focus~.bar:after {
 .pageContent{padding-top: 0;}
 .pageContent h3{color: var(--color-primary);margin-bottom: 0;}
 .pageContent p{margin-top: 0;}
+
+.notifyText{color: var(--color-text-offset)}
+.notifyIcon svg{fill: var(--color-text-offset)}
+.notifyIcon.active svg{fill:var(--color-primary)}
+.notificationToggle{cursor: grab;}
 
 .themepicker {
   display: flex;

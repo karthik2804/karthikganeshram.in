@@ -30,6 +30,7 @@ module.exports = function (eleventyConfig) {
 	});
 
 	eleventyConfig.setDataDeepMerge(true);
+	eleventyConfig.addPassthroughCopy({ "src/firebase-messaging-sw.js": "/firebase-messaging-sw.js" })
 	eleventyConfig.addPassthroughCopy({ "src/assets": "/assets" })
 	eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" })
 	eleventyConfig.addPassthroughCopy({ "src/blog/**/*.jpg": "/assets/images" })
@@ -37,13 +38,14 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({ "src/blog/**/*.png": "/assets/images" })
 	eleventyConfig.addPassthroughCopy({ "src/images/*.jpg": "/assets/images" })
 	eleventyConfig.addPassthroughCopy({ "src/images/*.png": "/assets/images" })
-	eleventyConfig.setTemplateFormats([
-		"md",
-	]);
 
 	let months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 	eleventyConfig.addNunjucksFilter("trimTitle", function (value) {
 		return (value.slice(0, 30) + "...")
+	})
+	eleventyConfig.addNunjucksFilter("date2epoch", function (value) {
+		let temp = new Date(value)
+		return temp.getTime()
 	})
 	eleventyConfig.addNunjucksFilter("trimContent", function (value) {
 		let excerpt = value.split("\n", 1)[0].slice(0, 150);

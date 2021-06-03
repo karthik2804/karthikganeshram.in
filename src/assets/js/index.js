@@ -46,4 +46,3 @@ function toggleThemeSelection() {
 /********************
 *Theme picker end
 *********************/
-
