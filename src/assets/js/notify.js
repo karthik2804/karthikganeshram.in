@@ -26,6 +26,7 @@ async function enableNotifications() {
 	}
 	else {
 		alert("Now you will be asked for notification permissions")
+		notificationToken = await getToken()
 		subscribteTopic()
 	}
 }
