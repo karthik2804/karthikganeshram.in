@@ -1,0 +1,37 @@
+<div class="d-flex flex-column nav-item items-center relative {% if pageName != "Blog"%}hide-mob{% endif %}">
+	<div id="notifyDropDown" class="dropdown-content absolute">
+		<div class="dropdown-content-container">
+			<div class="w-100 h-100 pa1">
+				<div class="flex justify-end">
+					<label class="switch">
+						<input class="toggleSwitch" type="checkbox" id="notificationToggleSwitch" name="notifications" value="notifications" onchange="toggleNotification()">
+						<span class="slider round"></span>
+					</label>
+				</div>
+				<div class="divider"></div>
+				<div class="dropdown-taglist">
+				{%- for tag in collections | returnKeys %}
+					{%- if tag != "post"-%}
+						{%- if tag != "pagedTags"-%}
+							{%- if tag != "pagedTagsListing"-%}
+								{%- if tag != "all"-%}
+									<div class="form-group">
+										<input type="checkbox" id="{{tag}}-notify" name="tagList" value="{{tag}}-notify" onchange="updateTagNotificationPreference('{{tag}}')">
+										<label for="{{tag}}-notify">{{tag}}</label>
+									</div>
+								{%- endif -%}
+							{%- endif -%}
+						{%- endif -%}
+					{%- endif -%}
+				{%- endfor -%}
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="notifyToggle" onclick="toggleNotificationMenu()">
+		<span id="notifyBell" class="notifyIcon flex justify-center items-center h3">
+			{% include "icons/notify.html" %}
+		</span>
+	</div>
+	<div id="notificationOverlay" class="notificationOverlay fixed"></div>
+</div>

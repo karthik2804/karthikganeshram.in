@@ -445,6 +445,8 @@ a{
 .relative{ position: relative; }
 .fixed{ position: fixed; }
 .hide{ display: none; }
+.hide-mob{opacity: 0;pointer-events: none;}
+@media screen and (max-width: 800px) {.hide-mob{display: none;}}
 .img-responsive{ width: 100%;height: auto; }
 /************************************************
               Css Utilities end
@@ -545,7 +547,6 @@ th,td {
 .hamburger {
   display: none;
   padding: 1rem;
-  margin-left: 1rem;
   margin-right: 1rem;
   flex-direction: column;
   justify-content: center;
@@ -570,7 +571,7 @@ th,td {
   }
   .hamburger {
       display: block;
-      z-index: 2;
+      z-index: 10;
       transition: all 0.7s ease;
   }
   .nav-links {
@@ -587,7 +588,7 @@ th,td {
       -webkit-clip-path: circle(50px at 90% -10%);
       transition: all 0.75s ease-out;
       pointer-events: none;
-      z-index: 2;
+      z-index: 5;
   }
   .nav-links a {
     margin: 1rem;
@@ -917,7 +918,7 @@ textarea {
 	min-height: 3rem;
 }
 
-input.textbox,
+input[type=text],
 textarea {
 	font-size: 18px;
 	padding: 10px 10px 10px 5px;
@@ -929,11 +930,12 @@ textarea {
 	background: transparent;
 }
 
-input.textbox:focus,
+input[type=text]:focus,
 textarea:focus {
 	outline: none;
 }
-label {
+input[type=text] ~ label,
+textarea ~ label {
 	color: #999;
 	font-size: 18px;
 	font-weight: normal;
@@ -949,8 +951,8 @@ label {
 
 /* active state */
 
-input.textbox:focus~label,
-input:valid~label,
+input[type=text]:focus~label,
+input[type=text]:valid~label,
 textarea:focus~label,
 textarea:valid~label {
 	top: -20px;
@@ -1053,10 +1055,156 @@ textarea:focus~.bar:after {
 .pageContent h3{color: var(--color-primary);margin-bottom: 0;}
 .pageContent p{margin-top: 0;}
 
-.notifyText{color: var(--color-text-offset)}
+.notifyIcon{border-radius:50%;width:3rem;height:3rem;;background:var(--color-bg-offset);margin-right: 0.75rem;padding:0.6rem;}
 .notifyIcon svg{fill: var(--color-text-offset)}
 .notifyIcon.active svg{fill:var(--color-primary)}
-.notificationToggle{cursor: grab;}
+.notifyToggle{cursor: pointer;}
+
+.dropdown-content{
+	right: 1rem;
+	top: 4rem;
+	max-height: 0;
+	transition: all 0.25s linear;
+	background: var(--color-bg-offset);
+	border-radius: 10px;
+	transform: translate(-10px,10px);
+	opacity: 0;
+}
+.dropdown-content-container {
+	max-height: 0px;
+	width: 200px;
+	overflow-y: hidden;
+	transition: max-height 0.25s linear;
+	transition: overflow-y 0.25s linear;
+	transition-delay: 0.5s;
+}
+.dropdown-content::before {
+  content: '';
+	position: absolute;
+	top: -10px;
+	right: 0.25rem;
+  border-bottom: 1rem solid var(--color-bg-offset);
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+}
+.dropdown-content.active {
+	max-height: 25rem;
+	opacity: 1;
+	z-index: 12;
+	transform: translate(0px,0px);
+}
+.dropdown-taglist{
+	max-height: 20rem;
+	height: 100%;
+	overflow-y: auto;
+}
+.dropdown-content.active .dropdown-content-container{max-height: 25rem;transition-delay: 0s;overflow-y:hidden;}
+.dropdown-content.active ~ .notifyToggle {z-index: 12;position: relative;}
+.dropdown-content.active ~ .notificationOverlay{
+	top:0;
+	left: 0;
+	width:100%;
+	height:100%;
+	background: #000000aa;
+	z-index:11;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+}
+
+.switch input[type=checkbox].toggleSwitch {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #bbb;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.3rem;
+  width: 1.3rem;
+  left: 0.1rem;
+  bottom: 0.1rem;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input[type=checkbox].toggleSwitch:checked + .slider {background-color: var(--color-primary);}
+
+input[type=checkbox].toggleSwitch:focus + .slider {box-shadow: 0 0 1px var(--color-primary);}
+
+input[type=checkbox].toggleSwitch:checked + .slider:before {transform: translateX(1.5rem);}
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.form-group {
+  display: block;
+  margin-bottom: 15px;
+}
+
+.form-group input[type=checkbox] {
+  padding: 0;
+  height: initial;
+  width: initial;
+  margin-top: 0;
+  display: none;
+  cursor: pointer;
+}
+
+.form-group label {
+  position: relative;
+  cursor: pointer;
+	text-transform: none;
+}
+
+.form-group label:before {
+  content:'';
+  -webkit-appearance: none;
+  background-color: transparent;
+  border: 2px solid var(--color-secondary);
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  vertical-align: bottom;
+  cursor: pointer;
+  margin-right: 0.5rem;
+}
+.form-group input[type=checkbox]:checked + label:after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 5px;
+  left: 9px;
+  width: 6px;
+  height: 14px;
+  border: solid var(--color-secondary);
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
 
 .themepicker {
   display: flex;
