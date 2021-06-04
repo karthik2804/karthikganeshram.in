@@ -1,6 +1,8 @@
 importScripts('https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js');
 importScripts('https://www.gstatic.com/firebasejs/8.6.2/firebase-messaging.js');
 
+let myUrl = "";
+
 let dbDef = {
 	dbName: "websiteDB",
 	dbStore: "tags",
@@ -81,6 +83,11 @@ messaging.setBackgroundMessageHandler((payload) => {
 		icon: "https://karthikganeshram.in/assets/images/logo.png",
 		badge: "https://karthikganeshram.in/assets/images/logo.png"
 	};
+	myUrl = payload.data.url;
+    self.addEventListener('notificationclick', function(event) {
+        event.waitUntil(self.clients.openWindow(myUrl));
+        event.notification.close();
+    })
 
 	readDB(dbDef, payload.data.tag + "-notify").then(data => {
 		console.log(data.status)

@@ -115,7 +115,32 @@ async function disableNotifications() {
 
 messaging.onMessage((payload) => {
 	console.log('Message received. ', payload);
+
+	const notificationTitle = payload.data.title;
+	const notificationOptions = {
+		body: payload.data.body,
+		image: payload.data.image,
+		icon: "https://karthikganeshram.in/assets/images/logo.png",
+		badge: "https://karthikganeshram.in/assets/images/logo.png",
+		"data": {
+			"url": payload.data.url
+		}
+	};
+
+	readDB(dbDef, payload.data.tag + "-notify").then(data => {
+		console.log(data.status)
+		if (data.status) {
+			let message = new Notification(notificationTitle, notificationOptions);
+			message.addEventListener('click', function(){
+				window.location = payload.data.url
+		})
+		}
+		else {
+			console.log("rejected by user")
+		}
+	})
 });
+
 
 function subUnsub(action) {
 	fetch(notifyApiUrl + action, {
