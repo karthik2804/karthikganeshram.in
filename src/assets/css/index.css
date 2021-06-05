@@ -744,6 +744,10 @@ img+em a {
 	line-height: 1.625rem;
 }
 
+.post-content p{
+	margin-bottom: 2rem;
+}
+.post-content h2,h3,h4{margin: 3rem 0 1.5rem 0;}
 .post-content img, .post-content video {
 	width: 100%;
 	height: auto;
@@ -1154,13 +1158,6 @@ input[type=checkbox].toggleSwitch:focus + .slider {box-shadow: 0 0 1px var(--col
 
 input[type=checkbox].toggleSwitch:checked + .slider:before {transform: translateX(1.5rem);}
 
-*, *:before, *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 .form-group {
   display: block;
   margin-bottom: 15px;
