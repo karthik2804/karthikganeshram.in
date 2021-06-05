@@ -274,7 +274,7 @@ We need to create a new page on our website which will be a static website that 
 
 Now to compare if the date specified on the api is newer than the last notification, we must be able to store global variables in the worker script, that is where cloudflare kv comes in. Let us create a namespace for kv. Namespaces in cloudflare are nothing but a way to reference the objects in the worker script. Run the following command in the command line and save its output to "wrangler.toml". 
 
-```
+```js
 wrangler kv:namespace create "NOTIFICATIONS_KV_DB"
 ```
 
