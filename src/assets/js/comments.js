@@ -100,7 +100,6 @@ commentIframe.addEventListener("load", function () { submit() }, true)
 
 function submit() {
 	document.getElementById("comment-content").value = ""
-	showSnackbar("Submitted Comment")
 	loadComments()
 }
 
