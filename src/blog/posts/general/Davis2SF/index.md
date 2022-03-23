@@ -5,7 +5,7 @@ description: In this post, I share my experience of biking from Davis to San Fra
 mainImage: /assets/images/Davis2SFcover.jpg
 mainImageAlt: Bike in front of the Carquinez bridge
 imageCaption: Carquinez bridge trail viewpoint
-date: 2022-03-23
+date: 2022-03-22
 tags: 
     - post
     - General
@@ -32,6 +32,8 @@ As spring break approached, I was feeling ambitious and decided to attempt going
 ## The journey
 
 I decided to attempt biking from Davis to San Francisco on March 21st, 2022. It was also helpful that my friends decided to drive down to San Francisco to pick me up and drive me back to Davis. I slept early the previous night so I could start early in the morning. I left the house at 4:50am and started pedaling towards the destination. 
+
+![Biking early in the morning](/assets/images/Davis2SFride.jpg)*Biking early in the morning*
 
 The first 3 hours of the journey were very smooth, I had gone a little more than a third of the way passing Dixon, Vacaville, and reached Fairfield. The roads were pretty good although it was mostly farm roads. As I reached Fairfield, my rear tire had a puncture and I almost decided the ride was over. But as it was to be, the ride was not over. Mike drove up to me and helped me get back on the journey.
 
