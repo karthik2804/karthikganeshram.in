@@ -22,7 +22,8 @@ module.exports = function (eleventyConfig) {
 	markdownLib.renderer.rules.table_close = function(tokens, idx, options, env, self) {
 		return self.renderToken(tokens, idx, options) + `</div>`
 	}
-	
+	eleventyConfig.addWatchTarget('src/blog/posts');
+
 	eleventyConfig.setLibrary("md", markdownLib)
 
 	eleventyConfig.addFilter('dump', obj => {
@@ -34,6 +35,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy({ "src/assets": "/assets" })
 	eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" })
 	eleventyConfig.addPassthroughCopy({ "src/blog/**/*.jpg": "/assets/images" })
+	eleventyConfig.addPassthroughCopy({ "src/blog/**/*.webp": "/assets/images" })
 	eleventyConfig.addPassthroughCopy({ "src/blog/**/*.webm": "/assets/images" })
 	eleventyConfig.addPassthroughCopy({ "src/blog/**/*.png": "/assets/images" })
 	eleventyConfig.addPassthroughCopy({ "src/images/*.jpg": "/assets/images" })

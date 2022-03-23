@@ -4,7 +4,6 @@ layout: about.njk
 ### Work
 I last worked as a project assosicate in a communications system project at Indian Institute of Technology, Madras from August 2020 to April 2021. 
 
-I am currently preparing for my Master's degree.
 
 ### Professional Interests
 
@@ -15,7 +14,9 @@ I also enjoy developing websites and web apps. I am excited to learn about techn
 ### Other Interests
 When I am not working or studying, I like to play football (soccer). I enjoy listening to music and also a bit of gaming. Photography is something I do once in a while, checkout my photos at [Instagram]({{author.social.instagram.url}})
 
-I have recently found an interest in philosphy and enjoy reading books to explore new perspectives.
+I also enjoy biking. It started being a hobby of mine when I started my M.S degree at UC Davis.
+
+I enjoy philosphy and reading books to explore new perspectives.
 
 ### Music
 I prefer rock music as a genre the most but enjoy most kinds of music.
