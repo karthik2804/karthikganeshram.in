@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  <url>
+    <loc>/blog/posts/a-peek-into-my-life-and-a-brief-introduction/</loc>
+    <lastmod>2021-05-07T00:00:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/posts/adding-comments-to-eleventy-website-with-google-sheets-and-forms/</loc>
+    <lastmod>2021-05-10T00:00:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/posts/a-dive-into-my-personal-philosophy/</loc>
+    <lastmod>2021-05-14T00:00:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/posts/why-strong-opinions-matter/</loc>
+    <lastmod>2021-05-17T00:00:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/posts/creating-content-cards-using-css-grids-in-eleventy/</loc>
+    <lastmod>2021-05-22T00:00:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/posts/be-selfish-to-be-selfless/</loc>
+    <lastmod>2021-05-27T00:00:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/posts/adding-push-notifications-to-static-sites/</loc>
+    <lastmod>2021-06-05T00:00:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/posts/my-biking-journey-davis-to-san-francisco/</loc>
+    <lastmod>2022-03-22T00:00:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/about/</loc>
+    <lastmod>2022-03-23T17:19:03.171Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/api/latestPost.json</loc>
+    <lastmod>2022-03-23T17:19:03.171Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/</loc>
+    <lastmod>2022-03-23T17:19:03.171Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog/tags/general/0/</loc>
+    <lastmod>2022-03-23T17:19:03.187Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/</loc>
+    <lastmod>2022-03-23T17:19:03.187Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/blog-roll/</loc>
+    <lastmod>2022-03-23T17:19:03.187Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/privacy-policy/</loc>
+    <lastmod>2022-03-23T17:19:03.187Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>/reading-list/</loc>
+    <lastmod>2022-03-23T17:19:03.187Z</lastmod>
+  </url>
+  
+</urlset>
