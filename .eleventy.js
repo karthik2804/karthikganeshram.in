@@ -1,5 +1,6 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight")
 const util = require('util')
+const lazyLoading = require('markdown-it-image-lazy-loading')
 
 module.exports = function (eleventyConfig) {
 	const pagedTagsCollection = require('./src/includes/collections/pagedTags');
@@ -22,9 +23,19 @@ module.exports = function (eleventyConfig) {
 	markdownLib.renderer.rules.table_close = function(tokens, idx, options, env, self) {
 		return self.renderToken(tokens, idx, options) + `</div>`
 	}
-	eleventyConfig.addWatchTarget('src/blog/posts');
+	markdownLib.use(lazyLoading, {
+		image_size: true,
+		base_path: __dirname + '/_site',
+	});
+
+	eleventyConfig.addWatchTarget('src/blog/posts')
 
 	eleventyConfig.setLibrary("md", markdownLib)
+
+	eleventyConfig.addNunjucksShortcode(
+		"markdown",
+		content => `${markdownLib.render(content)}`
+	  );
 
 	eleventyConfig.addFilter('dump', obj => {
 		return util.inspect(obj)

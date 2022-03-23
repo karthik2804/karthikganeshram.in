@@ -23,8 +23,9 @@ includedScripts: [https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js, http
 		<div>{{page.date | formatPostDate}}</div>
 	</div>
 	<div class="column col-12">
-		<img class="img-responsive" src="{{mainImage}}" alt="{{mainImageAlt}}">
-		<em>{{imageCaption | safe}}</em>
+		{% set snippet %} ![]({{mainImage}}){.img-responsive} <em>{{imageCaption | safe}}</em> {% endset %}
+		{% markdown snippet %}
+		
 	</div>
 	<div class="column col-3 hide-md pa1 post-content"></div>
 	<div class="column col-6 col-md-12 pa1 post-content">
